@@ -7,3 +7,9 @@ from base.api import serializers
 
 @api_view(['GET'])
 def getRoutes(request):
+    routes = [
+        'GET /api',
+        'GET /api/rooms',
+        'GET /api/rooms/:id'
+    ]
+    return Response(routes)
