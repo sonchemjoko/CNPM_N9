@@ -1,4 +1,6 @@
+{% extends 'main.html' %}
 
+{% block content %}
 <main class="create-room layout">
   <div class="container">
     <div class="layout__box">
@@ -17,13 +19,16 @@
       </div>
       <div class="layout__body">
         <form class="form" action="" method="POST">
+          {% csrf_token %}
 
           <div class="form__group">
             <label for="room_topic">Giảng viên hướng dẫn</label>
             <input required type="text" value="{{room.topic.name}}" name="topic" list="topic-list" />
             <datalist id="topic-list">
               <select id="room_topic">
-                <option value="{{topic.name}}">topic.name/option>
+                {% for topic in topics %}
+                <option value="{{topic.name}}">{{topic.name}}</option>
+                {% endfor %}
               </select>
             </datalist>
           </div>
@@ -31,12 +36,12 @@
 
           <div class="form__group">
             <label for="room_name">Tên đề tài</label>
-            form.name
+            {{form.name}}
           </div>
 
           <div class="form__group">
             <label for="room_description">Nội dung</label>
-            form.description
+            {{form.description}}
           </div>
 
 
@@ -49,3 +54,4 @@
     </div>
   </div>
 </main>
+{% endblock content %}
