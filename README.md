@@ -21,6 +21,7 @@ Thành viên :
 - Hoàng Công Tuyền
 
 =====================================
+
 Lệnh setup + chạy : 
 
 pip install -r requiments.txt
