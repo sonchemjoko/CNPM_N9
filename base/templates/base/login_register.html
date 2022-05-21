@@ -18,7 +18,7 @@
           {% csrf_token %}
           <div class="form__group form__group">
             <label for="room_name">Email</label>
-            <input id="username" name="email" type="email" placeholder="e.g. sondh@email.com "/>
+            <input id="username" name="email" type="email" placeholder="e.g. sondh@email.com ">
           </div>
           <div class= "form__group">
             <label for="password">Mật khẩu</label>
@@ -42,7 +42,7 @@
         </form>
 
         <div class="auth__action">
-          <p>Haven't signed up yet?</p>
+          <p>Đăng kí tài khoản mới</p>
           <a href="{% url 'register' %}" class="btn btn--link">Đăng Kí</a>
         </div>
       </div>
@@ -86,8 +86,7 @@
         </form>
 
         <div class="auth__action">
-          <p>Already signed up yet?</p>
-          <a href="{% url 'login' %}" class="btn btn--link">Đăng Nhập</a>
+          <a href="{% url 'login' %}" class="btn btn--link">Đăng Nhập Ngay</a>
         </div>
       </div>
     </div>
