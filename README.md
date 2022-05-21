@@ -19,8 +19,8 @@ Thành viên :
 - Đỗ Ngọc Huấn
 
 - Hoàng Công Tuyền
-=====================================
 
+=====================================
 Lệnh setup + chạy : 
 
 pip install -r requiments.txt
