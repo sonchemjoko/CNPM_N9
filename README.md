@@ -24,7 +24,7 @@ Thành viên :
 
 Lệnh setup + chạy : 
 
-pip install -r requiments.txt
+pip install -r requirements.txt
 
 py manage.py makemigrations
 
