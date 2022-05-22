@@ -22,6 +22,7 @@
       <div class="activities-page layout__body">
 
         {% for message in room_messages %}
+        {% if request.user == message.user or request.user.is_superuser %}
         <div class="activities__box">
           <div class="activities__boxHeader roomListRoom__header">
             <a href="{% url 'user-profile' message.user.id %}" class="roomListRoom__author">
@@ -33,8 +34,7 @@
                 <span>{{message.created|timesince}} ago</span>
               </p>
             </a>
-
-            {% if request.user == message.user %}
+            
             <div class="roomListRoom__actions">
               <a href="{% url 'delete-message' message.id %}">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -45,7 +45,7 @@
                 </svg>
               </a>
             </div>
-            {% endif %}
+            
 
           </div>
           <div class="activities__boxContent">
@@ -55,6 +55,7 @@
             </div>
           </div>
         </div>
+        {% endif %}
         {% endfor %}
 
       </div>
