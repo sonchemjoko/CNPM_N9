@@ -21,7 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3#av2c6nptlbbb6^muqkchu&fe3wv&n$t2+g$v!ir-f5%doocb'
-
+RECAPTCHA_PUBLIC_KEY = '6LegPA0gAAAAAK2C6UyD-Bp1PKe-tMJ7fUOYnN33'
+RECAPTCHA_PRIVATE_KEY = '6LegPA0gAAAAABX8SS7vZhJ_Ymw5FwyRo_Kwmn5o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     "corsheaders",
+    'captcha',
 ]
 
 AUTH_USER_MODEL = 'base.User'
