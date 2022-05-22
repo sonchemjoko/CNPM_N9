@@ -10,15 +10,15 @@ Giảng viên : Thầy Nguyễn Trọng Trung Anh
 
 Thành viên :
 
-- Đào Hồng Sơn
+- Đào Hồng Sơn - B19DCVT307
 
-- Nguyễn Minh Hoàng
+- Nguyễn Minh Hoàng - B19DCVT158
 
-- Đặng Minh Tân
+- Đặng Minh Tân - B19DCVT315
 
-- Đỗ Ngọc Huấn
+- Đỗ Ngọc Huấn - B19DCVT163
 
-- Hoàng Công Tuyền
+- Hoàng Công Tuyền - B19DCVT363
 
 =====================================
 
