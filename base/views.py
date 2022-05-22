@@ -1,3 +1,6 @@
+import json
+import requests
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
@@ -7,15 +10,28 @@ from django.contrib.auth import authenticate, login, logout
 from .models import Room, Topic, Message, User
 from .forms import RoomForm, UserForm, MyUserCreationForm
 
+
 # Create your views here.
 
 
 def loginPage(request):
     page = 'login'
+    context = {'page': page}
     if request.user.is_authenticated:
         return redirect('home')
 
     if request.method == 'POST':
+        captcha_token=request.POST.get('g-recaptcha-response')
+        cap_url='https://www.google.com/recaptcha/api/siteverify'
+        cap_secret=settings.RECAPTCHA_PRIVATE_KEY
+        cap_data={"secret":cap_secret,"response":captcha_token}
+        cap_server_response=requests.post(url=cap_url,data=cap_data)
+        cap_json = json.loads(cap_server_response.text)
+
+        if cap_json['success']==False:
+            messages.error(request,"Invalid Captcha Try Again")
+            return render(request, 'base/login_register.html', context)
+
         email = request.POST.get('email').lower()
         password = request.POST.get('password')
 
@@ -32,7 +48,7 @@ def loginPage(request):
         else:
             messages.error(request, 'Sai Tên Đăng Nhập Hoặc Mật Khẩu')
 
-    context = {'page': page}
+    
     return render(request, 'base/login_register.html', context)
 
 def logoutUser(request):
